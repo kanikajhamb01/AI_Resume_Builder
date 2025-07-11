@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      color: #000;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-top: 25px;
+    }
+    .section {
+      margin-top: 20px;
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .job-title, .project-title {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>{{ name }}</h1>
+  <p>{{ email }}</p>
+
+  <div class="section">
+    <h2>Education</h2>
+    <p>{{ education }}</p>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <ul>
+      {% for skill in skills %}
+        <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    <p class="job-title">{{ role }} at {{ company }}</p>
+    <ul>
+      {% for bullet in exp_bullets %}
+        <li>{{ bullet }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Projects</h2>
+    <p class="project-title">{{ project_title }}</p>
+    <ul>
+      <li>{{ project_bullet }}</li>
+    </ul>
+  </div>
+</body>
+</html>

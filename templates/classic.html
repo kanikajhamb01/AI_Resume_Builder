@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      margin: 50px;
+      line-height: 1.6;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      font-size: 32px;
+    }
+    h2 {
+      font-size: 22px;
+      border-bottom: 1px solid #000;
+      margin-top: 30px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>{{ name }}</h1>
+  <p style="text-align:center">{{ email }}</p>
+
+  <h2>Education</h2>
+  <p>{{ education }}</p>
+
+  <h2>Skills</h2>
+  <ul>
+    {% for skill in skills %}
+      <li>{{ skill }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Experience</h2>
+  <strong>{{ role }} at {{ company }}</strong>
+  <ul>
+    {% for bullet in exp_bullets %}
+      <li>{{ bullet }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Projects</h2>
+  <strong>{{ project_title }}</strong>
+  <ul>
+    <li>{{ project_bullet }}</li>
+  </ul>
+</body>
+</html>
